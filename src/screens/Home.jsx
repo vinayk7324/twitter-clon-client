@@ -181,15 +181,15 @@ const Home = () => {
                 </div>
                 <div className=" flex flex-col lg:pt-16  lg:space-y-3 ps-16  ">
                     <div className=" lg:space-y-10">
-                        <div className="header twitter-text text-[5rem] font-[800] "> Happening now </div>
-                        <div className=" twitter-text font-[800] lg:text-[2rem] "> Join today. </div>
+                        <div className="header twitter-text text-[2rem] font-[800] "> Happening now </div>
+                        <div className=" twitter-text font-[800] lg:text-[1rem] "> Join today. </div>
                     </div>
 
                     <div className="  lg:space-y-4 ">
                         <div className="        ">
 
-                            <div className="  w-[45%] flex-col flex items-center space-y-4">
-                                <button onClick={googleAuth} className=' flex items-center  w-full justify-center space-x-2 px-4 py-3  rounded-full bg-white text-black'>
+                            <div className="  w-[30%] flex-col flex items-center space-y-4">
+                                <button onClick={googleAuth} className=' flex items-center  w-full justify-center space-x-1 px-4 py-2  rounded-full bg-white text-black'>
                                     <span>
                                         <img width="30" height="30" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
                                     </span>
@@ -198,9 +198,9 @@ const Home = () => {
                                     </span>
                                 </button>
 
-                                <button  className='  flex items-center border w-full justify-center space-x-2 px-4 py-2 rounded-full bg-white text-black'>
+                                <button  className='  flex items-center border w-full justify-center space-x-1 px-4 py-2 rounded-full bg-white text-black'>
                                     <span>
-                                        <img width="35" height="35" src="https://img.icons8.com/ios-filled/50/mac-os.png" alt="mac-os" />
+                                        <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/mac-os.png" alt="mac-os" />
                                     </span>
                                     <span className=' font-bold'>
                                         Sign in with Apple
@@ -212,21 +212,21 @@ const Home = () => {
                             </div>
 
                         </div>
-                        <div className="w-[45%] space-y-2 ">
+                        <div className="w-[30%] space-y-2 ">
                             <button onClick={()=>setSignUp(true)} className=' flex items-center font-bold   w-full justify-center  px-4 py-2 rounded-full bg-[#0055ff] text-white'>
                                 Create account
 
                             </button>
-                            <p className=' text-[16px] open-sans-600  w-fit text-gray-500'>
+                            <p className=' lg:text-[14px] open-sans-600  w-fit text-gray-500'>
                                 By signing up, you agree to the <span className=' text-blue-500'>Terms of Service</span> and <span className='text-blue-500'>Privacy Policy</span>, including <span className='text-blue-500'>Cookie Use</span>.
                             </p>
 
                         </div>
                     </div>
 
-                    <div className=" pt-16 w-[45%] space-y-6">
-                        <span className=' twitter-text font-semibold lg:text-[24px]'>Already have an Account?</span>
-                        <button className=' twitter-text font-semibold hover:bg-[#141e2b] border-gray-600  border w-full py-3 rounded-full text-blue-500'> Sign in </button>
+                    <div className=" pt-16 w-[30%] space-y-6">
+                        <span className=' twitter-text font-semibold lg:text-[18px]'>Already have an Account?</span>
+                        <button className=' twitter-text font-semibold hover:bg-[#141e2b] border-gray-600  border w-full py-2 rounded-full text-blue-500 text-[17px]'> Sign in </button>
                     </div>
                 </div>
 
