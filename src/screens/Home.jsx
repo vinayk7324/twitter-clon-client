@@ -173,7 +173,7 @@ const Home = () => {
     }
     return (
         <div className=" relative   ">
-            <div className=' lg:grid lg:grid-cols-2  pt-10 gap-2 bg-black h-screen    text-white'>
+            <div className=' lg:grid lg:grid-cols-2 lg:pt-0 pt-10 gap-2 bg-black h-screen    text-white'>
                 <div className="hidden lg:block h-full">
                 <div className="     h-full flex items-center justify-center ">
                     <div className=" bg-img overflow-hidden   lg:scale-[1] rounded-full lg:h-[400px]  lg:w-[400px] bg-white "></div>
@@ -187,13 +187,13 @@ const Home = () => {
                 <img  className=' border h-full w-full bg-white rounded-full scale-[2]' src="https://img.icons8.com/ios-filled/50/twitterx--v1.png" alt="twitterx--v1"/>
                 </div>
                </div>
-                <div className=" flex flex-col lg:pt-16 mt-10 space-y-3 lg:ps-16 lg:px-0 px-5  ">
-                    <div className=" lg:space-y-10">
+                <div className=" flex flex-col lg:pt-10 mt-10 space-y-3 lg:ps-16 lg:px-0 px-5  ">
+                    <div className=" lg:space-y-6">
                         <div className="header twitter-text lg:text-[2rem]  text-2xl font-[800] "> Happening now </div>
                         <div className=" twitter-text font-[800] lg:text-[1rem] "> Join today. </div>
                     </div>
 
-                    <div className="  lg:space-y-4 ">
+                    <div className="  lg:space-y-2 ">
                         <div className="   lg:w-[30%] w-full     ">
 
                             <div className="    flex-col flex items-center lg:space-y-4 space-y-2">
@@ -220,7 +220,7 @@ const Home = () => {
                             </div>
 
                         </div>
-                        <div className="lg:w-[30%] space-y-2 ">
+                        <div className="lg:w-[30%] space-y-2 lg:space-y-1 ">
                             <button onClick={() => setSignUp(true)} className=' flex items-center font-bold   w-full justify-center  px-4 py-2 rounded-full bg-[#0055ff] text-white'>
                                 Create account
 
@@ -232,7 +232,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className=" lg:pt-16 pt-2 lg:w-[30%] lg:space-y-6 space-y-2">
+                    <div className=" lg:pt-2 pt-2 lg:w-[30%] lg:space-y-2 space-y-2">
                         <span className=' twitter-text font-semibold lg:text-[18px]'>Already have an Account?</span>
                         <button className=' twitter-text font-semibold hover:bg-[#141e2b] border-gray-600  border w-full py-2 rounded-full text-blue-500 text-[17px]'> Sign in </button>
                     </div>
