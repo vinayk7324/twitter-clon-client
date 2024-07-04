@@ -189,19 +189,19 @@ const Home = () => {
                </div>
                 <div className=" flex flex-col lg:pt-10 mt-10 space-y-3 lg:ps-16 lg:px-0 px-5  ">
                     <div className=" lg:space-y-6">
-                        <div className="header twitter-text lg:text-[2rem]  text-2xl font-[800] "> Happening now </div>
+                        <div className="header twitter-text lg:text-[2.5rem]  text-2xl font-[800] "> Happening now </div>
                         <div className=" twitter-text font-[800] lg:text-[1rem] "> Join today. </div>
                     </div>
 
                     <div className="  lg:space-y-2 ">
-                        <div className="   lg:w-[30%] w-full     ">
+                        <div className="   lg:w-[40%] w-full     ">
 
                             <div className="    flex-col flex items-center lg:space-y-4 space-y-2">
                                 <button onClick={googleAuth} className=' flex items-center  w-full justify-center space-x-1 px-4 py-2  rounded-full bg-white text-black'>
                                     <span>
-                                        <img className=' h-4' src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
+                                        <img className=' h-4 w-4 ' src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />
                                     </span>
-                                    <span className=' font-semibold'>
+                                    <span className=' font-semibold text-[16px]'>
                                         sign in with Google
                                     </span>
                                 </button>
@@ -210,7 +210,7 @@ const Home = () => {
                                     <span>
                                         <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/mac-os.png" alt="mac-os" />
                                     </span>
-                                    <span className=' font-bold'>
+                                    <span className=' font-bold text-[16px]'>
                                         Sign in with Apple
                                     </span>
 
@@ -220,7 +220,7 @@ const Home = () => {
                             </div>
 
                         </div>
-                        <div className="lg:w-[30%] space-y-2 lg:space-y-1 ">
+                        <div className="lg:w-[40%] space-y-2 lg:space-y-1 ">
                             <button onClick={() => setSignUp(true)} className=' flex items-center font-bold   w-full justify-center  px-4 py-2 rounded-full bg-[#0055ff] text-white'>
                                 Create account
 
@@ -232,7 +232,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className=" lg:pt-2 pt-2 lg:w-[30%] lg:space-y-2 space-y-2">
+                    <div className=" lg:pt-2 pt-2 lg:w-[40%] lg:space-y-2 space-y-2">
                         <span className=' twitter-text font-semibold lg:text-[18px]'>Already have an Account?</span>
                         <button className=' twitter-text font-semibold hover:bg-[#141e2b] border-gray-600  border w-full py-2 rounded-full text-blue-500 text-[17px]'> Sign in </button>
                     </div>
