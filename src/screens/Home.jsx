@@ -175,7 +175,7 @@ const Home = () => {
         <div className=" relative   ">
             <div className=' grid grid-cols-2  gap-2 bg-black h-screen    text-white'>
                 <div className="  flex items-center justify-center  ">
-                    <div className=" bg-img overflow-hidde scale-[1.8] rounded-full lg:h-[400px]  lg:w-[400px] bg-white "></div>
+                    <div className=" bg-img overflow-hidden rounded-full lg:h-[400px]  lg:w-[400px] bg-white "></div>
 
 
                 </div>
