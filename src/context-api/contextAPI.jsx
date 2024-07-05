@@ -4,13 +4,14 @@ const context = createContext();
 
 const ContextProvider = ({ children }) => {
     const [signUpPage,setSignUp]  = useState(false);
+    const [outlet,setOutlet] = useState(false);
    
    
 
 
     return (
 
-        <context.Provider value={{signUpPage,setSignUp}}>
+        <context.Provider value={{signUpPage,setSignUp ,setOutlet,outlet}}>
 
             {children}
 

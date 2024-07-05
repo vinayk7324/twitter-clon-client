@@ -5,11 +5,28 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './screens/Home.jsx'
 import { ContextProvider } from './context-api/contextAPI.jsx'
+import SignUp from './CustomComponent/SignUp.jsx'
+import OtpInput from './CustomComponent/OtpInput.jsx'
+import PasswordInput from './CustomComponent/PasswordInput.jsx'
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element:<Home/>
+    element:<Home/>,
+    children:[{
+      path:"signup",
+      element:<SignUp/>
+    },
+  {
+    path:"OtpInput",
+    element:<OtpInput/>
+  },
+  {
+    path:"password-input",
+    element:<PasswordInput/>
+  }
+
+]
 
   },
   {
