@@ -103,11 +103,11 @@ useEffect(()=>{
 
      {
        <div className="  text-white   relative w-[100%] h-full lg:w-[35%] lg:h-[75%] shadow-xl shadow-[#0b0b0b] bg-black lg:rounded-xl   ">
-      <span onClick={()=>window.history.back()}  className=' cursor-pointer absolute left-4 top-4 text-[20px] '>
+      <span onClick={()=>window.history.back()}  className=' cursor-pointer absolute left-2 top-2 text-[20px] '>
         <HiArrowLeft/>
       </span>
       {
-        isOnline ?<> <div className=" flex flex-col  justify-between lg:space-y-4 pt-10  h-full lg:py-4 ">
+        isOnline ?<> <div className=" flex flex-col   space-y-4 pt-10  h-full lg:py-4 ">
           <div className="  grid grid-rows-2 h-fit lg:px-16 ">
             <div className=' flex itece justify-center'>
               <div className="  w-fit h-fit  overflow-hidden bg-white ">
@@ -115,22 +115,22 @@ useEffect(()=>{
               </div>
             </div>
             <div className=" flex flex-col   px-3  ">
-              <span className=' twitter-text lg:text-3xl font-bold text-2xl  ' > We sent you a code </span>
-              <span className=' twitter-text ' >Enter it below to verify</span>
-              <span className=' twitter-text '> default email </span>
+              <span className=' twitter-text  font-bold text-xl  ' > We sent you a code </span>
+              <span className=' twitter-text text-[14px]' >Enter it below to verify</span>
+              <span className=' twitter-text text-[14px] '> default email </span>
             
             </div>
           </div>
           <div className=" w-full lg:space-y-4 space-y-2 flex items-center justify-center flex-col      lg:px-16 px-2  ">
           <div className=" space-x-2">
-              <span className={` ${redZone?"text-red-500":"text-white"}  py-2 px-4 twitter-text`}> {minute}:{second} </span>
-              <button disabled={resend} className={`twitter-text px-3  text-[18px] ${resend?" text-gray-500 hover:cursor-not-allowed":" text-white lg:hover:text-[#5dd4e6] "}`}>resend</button>
+              <span className={` ${redZone?"text-red-500":"text-white"}  py-2 px-4 text-[14px] twitter-text`}> {minute}:{second} </span>
+              <button disabled={resend} className={`twitter-text px-3  text-[14px] ${resend?" text-gray-500 hover:cursor-not-allowed":" text-white lg:hover:text-[#5dd4e6] "}`}>resend</button>
              </div>
             
                <div className="flex  space-x-3 ">
                {otp.map((data, index) => (
                  <input
-                   className="w-12 h-12 text-center text-xl border-[4px] border-white bg-inherit text-white focus:border-[#43dae2]  rounded-md 
+                   className="w-10 h-10 text-center text-[15px] border-[2px] border-white bg-inherit text-white focus:border-[#43dae2]  rounded-sm 
                      box-shadow-non  "
                    type="text"
                    name="otp"
@@ -158,7 +158,7 @@ useEffect(()=>{
 
           <div className="lg:h-full px-3 flex items-end lg:border-gray-500 lg:py-1 lg:px-16 pb-4 lg:pb-6  ">
         <div className=" w-full  ">
-          <button  onClick={()=>navigate('/password-input')} className='  w-full transition-all duration-300  py-3  bg-[#20abad]   rounded-full twitter-text  text-[16px]  font-bold hover:bg-[#3cbdd1] '>Next </button>
+          <button  onClick={()=>navigate('/password-input')} className='  w-full transition-all duration-300  py-2  bg-[#20abad]   rounded-full twitter-text  text-[14px]  font-bold hover:bg-[#3cbdd1] '>Next </button>
         </div>
       </div> 
 

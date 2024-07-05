@@ -87,12 +87,12 @@ const BirthdayInput = ({
 
     }
   return (
-    <div className=' flex justify-between '>
+    <div className=' flex justify-between  '>
                             <div className="   relative w-fit  ">
-                                <label htmlFor="  " className=' absolute twitter-text  ps-1 top-1 lg:text-[18px] text-[16px] left-3 text-white' >Month</label>
+                                <label htmlFor="  " className=' absolute twitter-text  ps-1 top-1 text-[14px]  left-3 text-white' >Month</label>
 
-                                <select value={DOB.month}   onChange={onchangeHandler} aria-invalid="false" className=' selctedArea border-[4px]  
-                                border-[2px] text-[16px] rounded-md focus-within:border-[#5fe6e8] cursor-pointer  bg-black text-white  lg:h-20  lg:w-52  h-16 w-32    twitter-text font-semibold  ' aria-placeholder='hello' name="month" id="">
+                                <select value={DOB.month}   onChange={onchangeHandler} aria-invalid="false" className=' selctedArea border-[2px]  
+                                border-[2px] text-[12px] rounded-md focus-within:border-[#5fe6e8] cursor-pointer  bg-black text-white    w-36  h-12  pt-4     twitter-text font-semibold  ' aria-placeholder='hello' name="month" id="">
                                     {
                                         monthArr.map((element, index) => (
 
@@ -103,9 +103,9 @@ const BirthdayInput = ({
                                 </select>
                             </div>
                             <div className="   relative w-fit rounded-md  ">
-                                <label htmlFor="  " className=' absolute  top-1 lg:text-[18px] left-3 text-[16px] text-white twitter-text' >Date</label>
+                                <label htmlFor="  " className=' absolute  top-1  left-3 text-[14px] text-white twitter-text' >Date</label>
 
-                                <select value={DOB.date} onChange={onchangeHandler} aria-invalid="false" className=' selctedArea border-[4px]  border-[2px] text-[16px]   rounded-md focus-within:border-[#5fe6e8] cursor-pointer  bg-black text-white   lg:h-20  lg:w-28 h-16 w-16     twitter-text font-semibold  ' aria-placeholder='hello' name="date" id="">
+                                <select value={DOB.date} onChange={onchangeHandler} aria-invalid="false" className=' selctedArea border-[2px]  border-[2px] text-[12px]   rounded-md focus-within:border-[#5fe6e8] cursor-pointer  bg-black text-white     lg:w-32 h-12 w-20 pt-4      twitter-text font-semibold  ' aria-placeholder='hello' name="date" id="">
                                     {
                                         dateArr.map((element, index) => (
 
@@ -116,9 +116,9 @@ const BirthdayInput = ({
                                 </select>
                             </div>
                             <div className="   relative w-fit ">
-                                <label htmlFor="  " className=' absolute  top-1 lg:text-[18px] left-3 text-white twitter-text text-[16px] px-1' >Year</label>
+                                <label htmlFor="  " className=' absolute  top-1  left-3 text-white twitter-text text-[14px] px-1' >Year</label>
 
-                                <select value={DOB.year} onChange={onchangeHandler} aria-invalid="false" className=' selctedArea border-[4px]  border-[2px] text-[14px] rounded-md focus-within:border-[#5fe6e8] cursor-pointer  bg-black text-white  lg:h-20  lg:w-28 h-16 w-24     twitter-text font-semibold  ' aria-placeholder='hello' name="year" id="" >
+                                <select value={DOB.year} onChange={onchangeHandler} aria-invalid="false" className=' selctedArea  border-[2px] text-[12px] rounded-md focus-within:border-[#5fe6e8] cursor-pointer  bg-black text-white    lg:w-28 h-12 w-24   pt-4  twitter-text font-semibold  ' aria-placeholder='hello' name="year" id="" >
                                     {
                                         yearArr.map((element, index) => (
 

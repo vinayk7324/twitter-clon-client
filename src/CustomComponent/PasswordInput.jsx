@@ -62,7 +62,7 @@ const PasswordInput = () => {
         <HiArrowLeft/>
       </span>
       {
-        isOnline ?<> <div className=" flex flex-col  justify-between lg:space-y-4 pt-10  h-full lg:py-4 ">
+        isOnline ?<> <div className=" flex flex-col border  space-y-4 pt-10  h-full lg:py-4 ">
           <div className="  grid grid-rows-2 h-fit space-y-2 lg:px-16 ">
             <div className=' flex itece justify-center'>
               <div className="  w-fit h-fit  overflow-hidden bg-white ">
@@ -70,21 +70,21 @@ const PasswordInput = () => {
               </div>
             </div>
             <div className=" flex flex-col   px-3  ">
-              <span className=' twitter-text lg:text-3xl font-bold text-xl  ' > You'll need a password </span>
-              <span className=' twitter-text text-[15px] ' >Make sure it’s 8 characters or more.</span>
+              <span className=' twitter-text lg:text-3xl font-bold text-xxl  ' > You'll need a password </span>
+              <span className=' twitter-text text-[12px] ' >Make sure it’s 8 characters or more.</span>
             
             
             </div>
           </div>
-          <div className=" h-full flex items-center justify-center px-3 lg:px-16">
-          <div className=' lg:border-[4px] lg:p-2   border-[2px]    border-[#31acca] w-full rounded-md   relative flex flex-col'>
+          <div className="  flex items-center justify-center px-3 lg:px-16">
+          <div className='  lg:p-2   border-[2px]    border-[#31acca] w-full rounded-md   relative flex flex-col'>
                 <label htmlFor="username" className=' twitter-text flex justify-between px-3   ' >
-                  <span className=' text-[#31acca] text-[16px]'>Password</span>
-                  <span className=' text-gray-400 text-[16px]'>0/50</span>
+                  <span className=' text-[#31acca] text-[12px]'>Password</span>
+                  <span className=' text-gray-400 text-[11px]'>0/50</span>
                 </label>
                <span className=' flex items-center'>
-               <input type="text" className='text-[16px] h-7  bg-inherit   border-none w-full text-gray-300 twitter-text font-semibold' />
-               <span className='lg:hover:cursor-pointer px-2 '> <HiEye/> </span>
+               <input type="text" className='text-[12px] h-7  bg-inherit   border-none w-full text-gray-300 twitter-text font-semibold' />
+               <span className='lg:hover:cursor-pointer px-2 text-[13px] '> <HiEye/> </span>
                </span>
               </div>
           </div>
@@ -92,12 +92,12 @@ const PasswordInput = () => {
 
           <div className="lg:h-full px-3 flex flex-col space-y-5 lg:border-gray-500 lg:py-1 lg:px-16 pb-4 lg:pb-6  ">
             <div className="">
-                <p className='  text-[14px] text-gray-500'>
+                <p className='  text-[12px]  text-gray-500'>
                 By signing up, you agree to the <span className='link'>Terms of Service</span> and <span className='link'> Privacy Policy</span>, including <span className=' link'>Cookie Use</span>. X may use your contact information, including your email address and phone number for purposes outlined in our Privacy Policy, like keeping your account secure and personalizing our services, including ads. <span className=' link '>Learn more</span>. Others will be able to find you by email or phone number, when provided, unless you choose otherwise <span className='link'>here</span>.
                 </p>
             </div>
         <div className=" w-full  ">
-          <button disabled className='  w-full transition-all duration-300  py-3  bg-[#20abad]   rounded-full twitter-text  text-[16px]  font-bold hover:bg-[#3cbdd1] '>Sign Up </button>
+          <button disabled className='  w-full transition-all duration-300  py-2  bg-[#20abad]   rounded-full twitter-text   font-bold hover:bg-[#3cbdd1] text-[14px] '>Sign Up </button>
         </div>
       </div> 
 
