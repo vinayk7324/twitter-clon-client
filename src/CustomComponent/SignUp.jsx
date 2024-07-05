@@ -89,7 +89,7 @@ console.log(month,date,year);
        <HiArrowLeft/>
       </span>
       {
-        isOnline ?<> <div className=" flex flex-col    space-y-4 pt-10   lg:py-4 ">
+        isOnline ?<> <div className=" flex flex-col    space-y-3 pt-10   lg:py-4 ">
           <div className="  grid grid-rows-2 h-fit lg:px-16 ">
             <div className=' flex itece justify-center'>
               <div className="  w-fit h-fit  overflow-hidden bg-white ">
@@ -101,11 +101,11 @@ console.log(month,date,year);
             
             </div>
           </div>
-          <div className=" w-full lg:space-y-4 space-y-2    lg:px-9 px-2  ">
+          <div className=" w-full  space-y-2     px-2 lg:px-5  ">
 
 
             <div className=' flex  '>
-              <div className='  lg:p-2   border-[2px] p-1    border-[#31acca] w-full rounded-md   relative flex flex-col'>
+              <div className='     border-[2px] p-1    border-[#31acca] w-full rounded-md   relative flex flex-col'>
                 <label htmlFor="username" className=' twitter-text flex justify-between px-3   ' >
                   <span className=' text-[#31acca] text-[14px]'>Name</span>
                   <span className=' text-gray-400 text-[12px]'>{name.length}/50</span>
@@ -114,7 +114,7 @@ console.log(month,date,year);
               </div>
             </div>
             <div className=' flex  '>
-              <div className='   border-[2px] lg:p-2   border-[#31acca] w-full rounded-md p-1  relative flex flex-col'>
+              <div className='   border-[2px]   border-[#31acca] w-full rounded-md p-1  relative flex flex-col'>
                 <label htmlFor="email" className=' twitter-text flex justify-between  px-3  ' >
                   <span className=' text-[#31acca] text-[14px] '>Email</span>
                   

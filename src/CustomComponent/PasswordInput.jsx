@@ -62,7 +62,7 @@ const PasswordInput = () => {
         <HiArrowLeft/>
       </span>
       {
-        isOnline ?<> <div className=" flex flex-col border  space-y-4 pt-10  h-full lg:py-4 ">
+        isOnline ?<> <div className=" flex flex-col   space-y-4 pt-10  h-full lg:py-4 ">
           <div className="  grid grid-rows-2 h-fit space-y-2 lg:px-16 ">
             <div className=' flex itece justify-center'>
               <div className="  w-fit h-fit  overflow-hidden bg-white ">
@@ -70,7 +70,7 @@ const PasswordInput = () => {
               </div>
             </div>
             <div className=" flex flex-col   px-3  ">
-              <span className=' twitter-text lg:text-3xl font-bold text-xxl  ' > You'll need a password </span>
+              <span className=' twitter-text  font-bold text-xxl  ' > You'll need a password </span>
               <span className=' twitter-text text-[12px] ' >Make sure it’s 8 characters or more.</span>
             
             
@@ -92,7 +92,7 @@ const PasswordInput = () => {
 
           <div className="lg:h-full px-3 flex flex-col space-y-5 lg:border-gray-500 lg:py-1 lg:px-16 pb-4 lg:pb-6  ">
             <div className="">
-                <p className='  text-[12px]  text-gray-500'>
+                <p className='  text-[12px]  twitter-text text-[#9f9f9f]'>
                 By signing up, you agree to the <span className='link'>Terms of Service</span> and <span className='link'> Privacy Policy</span>, including <span className=' link'>Cookie Use</span>. X may use your contact information, including your email address and phone number for purposes outlined in our Privacy Policy, like keeping your account secure and personalizing our services, including ads. <span className=' link '>Learn more</span>. Others will be able to find you by email or phone number, when provided, unless you choose otherwise <span className='link'>here</span>.
                 </p>
             </div>
