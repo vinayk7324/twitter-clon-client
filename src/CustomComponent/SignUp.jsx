@@ -89,7 +89,7 @@ console.log(month,date,year);
        <HiArrowLeft/>
       </span>
       {
-        isOnline ?<> <div className=" flex flex-col    space-y-3 pt-10    ">
+        isOnline ?<> <div className=" flex flex-col    space-y-2 pt-10 lg:pt-5    ">
           <div className="  grid grid-rows-2 h-fit lg:px-16 ">
             <div className=' flex itece justify-center'>
               <div className="  w-fit h-fit  overflow-hidden bg-white ">
@@ -101,7 +101,7 @@ console.log(month,date,year);
             
             </div>
           </div>
-          <div className=" w-full  space-y-2     px-2 lg:px-5  ">
+          <div className=" w-full  space-y-1     px-2 lg:px-5  ">
 
 
             <div className=' flex  '>

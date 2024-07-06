@@ -70,7 +70,7 @@ const PasswordInput = () => {
               </div>
             </div>
             <div className=" flex flex-col   px-3  ">
-              <span className=' twitter-text  font-bold text-xl  ' > You'll need a password </span>
+              <span className=' twitter-text  font-bold lg:text-xl text-[1.2rem]  ' > You'll need a password </span>
               <span className=' twitter-text text-[12px] ' >Make sure it’s 8 characters or more.</span>
             
             
@@ -78,7 +78,7 @@ const PasswordInput = () => {
           </div>
           <div className="  flex items-center justify-center px-3 lg:px-5">
           <div className='  lg:p-2   border-[2px]    border-[#31acca] w-full rounded-md   relative flex flex-col'>
-                <label htmlFor="username" className=' twitter-text flex justify-between px-3   ' >
+                <label htmlFor="username" className=' twitter-text flex justify-between px-3 py-2   ' >
                   <span className=' text-[#31acca]  text-[14px]  '>Password</span>
                   <span className=' text-gray-400 text-[14px] '>0/50</span>
                 </label>
