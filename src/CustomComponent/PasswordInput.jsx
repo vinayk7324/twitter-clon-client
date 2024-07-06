@@ -63,34 +63,34 @@ const PasswordInput = () => {
       </span>
       {
         isOnline ?<> <div className=" flex flex-col   space-y-4 pt-10  h-full lg:py-4 ">
-          <div className="  grid grid-rows-2 h-fit space-y-2 lg:px-16 ">
+          <div className="  grid grid-rows-2 h-fit space-y-2 lg:px-5 ">
             <div className=' flex itece justify-center'>
               <div className="  w-fit h-fit  overflow-hidden bg-white ">
                 <img className=' scale-[1.59] ' src="https://img.icons8.com/ios-filled/50/twitterx--v1.png" alt="twitterx--v1" />
               </div>
             </div>
             <div className=" flex flex-col   px-3  ">
-              <span className=' twitter-text  font-bold text-xxl  ' > You'll need a password </span>
+              <span className=' twitter-text  font-bold text-xl  ' > You'll need a password </span>
               <span className=' twitter-text text-[12px] ' >Make sure it’s 8 characters or more.</span>
             
             
             </div>
           </div>
-          <div className="  flex items-center justify-center px-3 lg:px-16">
+          <div className="  flex items-center justify-center px-3 lg:px-5">
           <div className='  lg:p-2   border-[2px]    border-[#31acca] w-full rounded-md   relative flex flex-col'>
                 <label htmlFor="username" className=' twitter-text flex justify-between px-3   ' >
-                  <span className=' text-[#31acca] text-[12px]'>Password</span>
-                  <span className=' text-gray-400 text-[11px]'>0/50</span>
+                  <span className=' text-[#31acca]  text-[14px]  '>Password</span>
+                  <span className=' text-gray-400 text-[14px] '>0/50</span>
                 </label>
                <span className=' flex items-center'>
-               <input type="text" className='text-[12px] h-7  bg-inherit   border-none w-full text-gray-300 twitter-text font-semibold' />
-               <span className='lg:hover:cursor-pointer px-2 text-[13px] '> <HiEye/> </span>
+               <input type="text" className='text-[15px] h-7  bg-inherit   border-none w-full text-gray-300 twitter-text font-semibold' />
+               <span className='lg:hover:cursor-pointer px-2 text-[15px] '> <HiEye/> </span>
                </span>
               </div>
           </div>
           
 
-          <div className="lg:h-full px-3 flex flex-col space-y-5 lg:border-gray-500 lg:py-1 lg:px-16 pb-4 lg:pb-6  ">
+          <div className="lg:h-full px-3 flex flex-col space-y-5 lg:border-gray-500 lg:py-1 lg:px-5 pb-4 lg:pb-6  ">
             <div className="">
                 <p className='  text-[12px]  twitter-text text-[#9f9f9f]'>
                 By signing up, you agree to the <span className='link'>Terms of Service</span> and <span className='link'> Privacy Policy</span>, including <span className=' link'>Cookie Use</span>. X may use your contact information, including your email address and phone number for purposes outlined in our Privacy Policy, like keeping your account secure and personalizing our services, including ads. <span className=' link '>Learn more</span>. Others will be able to find you by email or phone number, when provided, unless you choose otherwise <span className='link'>here</span>.

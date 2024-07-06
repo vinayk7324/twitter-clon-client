@@ -115,7 +115,7 @@ useEffect(()=>{
               </div>
             </div>
             <div className=" flex flex-col   px-3  ">
-              <span className=' twitter-text  font-bold text-xl  ' > We sent you a code </span>
+              <span className=' twitter-text  font-bold lg:text-xl text-[26px]  ' > We sent you a code </span>
               <span className=' twitter-text text-[14px]' >Enter it below to verify</span>
               <span className=' twitter-text text-[14px] '> default email </span>
             
@@ -123,14 +123,14 @@ useEffect(()=>{
           </div>
           <div className=" w-full lg:space-y-4 space-y-2 flex items-center justify-center flex-col      lg:px-16 px-2  ">
           <div className=" space-x-2">
-              <span className={` ${redZone?"text-red-500":"text-white"}  py-2 px-4 text-[14px] twitter-text`}> {minute}:{second} </span>
-              <button disabled={resend} className={`twitter-text px-3  text-[14px] ${resend?" text-gray-500 hover:cursor-not-allowed":" text-white lg:hover:text-[#5dd4e6] "}`}>resend</button>
+              <span className={` ${redZone?"text-red-500":"text-white"}  py-2 px-4 lg:text-[14px] text-[16px] twitter-text`}> {minute}:{second} </span>
+              <button disabled={resend} className={`twitter-text px-3  lg:text-[14px] text-[16px] ${resend?" text-gray-500 hover:cursor-not-allowed":" text-white lg:hover:text-[#5dd4e6] "}`}>resend</button>
              </div>
             
                <div className="flex  space-x-3 ">
                {otp.map((data, index) => (
                  <input
-                   className="w-10 h-10 text-center text-[15px] border-[2px] border-white bg-inherit text-white focus:border-[#43dae2]  rounded-sm 
+                   className="lg:w-10 lg:h-10 h-12 w-12 text-center text-[15px] border-[2px] border-white bg-inherit text-white focus:border-[#43dae2]  rounded-sm 
                      box-shadow-non  "
                    type="text"
                    name="otp"

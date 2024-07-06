@@ -117,7 +117,7 @@ const Home = () => {
                </div>
                 <div className=" flex flex-col lg:pt-10 mt-10 space-y-3 lg:ps-16 lg:px-0 px-5  ">
                     <div className=" lg:space-y-6">
-                        <div className="header twitter-text lg:text-[3.1rem]  text-2xl font-[800] "> Happening now </div>
+                        <div className="header twitter-text lg:text-[3.1rem]  text-[1.5rem] font-[800] "> Happening now </div>
                         <div className=" twitter-text font-[800] lg:text-[1rem] "> Join today. </div>
                     </div>
 

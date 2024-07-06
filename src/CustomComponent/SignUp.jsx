@@ -89,7 +89,7 @@ console.log(month,date,year);
        <HiArrowLeft/>
       </span>
       {
-        isOnline ?<> <div className=" flex flex-col    space-y-3 pt-10   lg:py-4 ">
+        isOnline ?<> <div className=" flex flex-col    space-y-3 pt-10    ">
           <div className="  grid grid-rows-2 h-fit lg:px-16 ">
             <div className=' flex itece justify-center'>
               <div className="  w-fit h-fit  overflow-hidden bg-white ">
@@ -97,7 +97,7 @@ console.log(month,date,year);
               </div>
             </div>
             <div className="    px-3 ">
-              <span className=' twitter-text  font-bold text-xl  items-center flex justify-center' >Create your account </span>
+              <span className=' twitter-text  font-bold lg:text-xl text-xl   items-center flex justify-center' >Create your account </span>
             
             </div>
           </div>
@@ -107,8 +107,8 @@ console.log(month,date,year);
             <div className=' flex  '>
               <div className='     border-[2px] p-1    border-[#31acca] w-full rounded-md   relative flex flex-col'>
                 <label htmlFor="username" className=' twitter-text flex justify-between px-3   ' >
-                  <span className=' text-[#31acca] text-[14px]'>Name</span>
-                  <span className=' text-gray-400 text-[12px]'>{name.length}/50</span>
+                  <span className=' text-[#31acca] lg:text-[14px] text-[16px] '>Name</span>
+                  <span className=' text-gray-400 lg:text-[12px] text-[14px] '>{name.length}/50</span>
                 </label>
                 <input onChange={(e)=>{setName(e.target.value)}}  value={name} type="text" className='text-[16px]  h-7 bg-inherit border-none text-gray-300 twitter-text text-[12px] font-semibold' />
               </div>
@@ -116,7 +116,7 @@ console.log(month,date,year);
             <div className=' flex  '>
               <div className='   border-[2px]   border-[#31acca] w-full rounded-md p-1  relative flex flex-col'>
                 <label htmlFor="email" className=' twitter-text flex justify-between  px-3  ' >
-                  <span className=' text-[#31acca] text-[14px] '>Email</span>
+                  <span className=' text-[#31acca] lg:text-[14px] text-[16px] '>Email</span>
                   
                 </label>
                 <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="text" className=' h-7 text-[16px] bg-inherit border-none text-gray-300 twitter-text font-semibold text-[12px]' />
@@ -126,7 +126,7 @@ console.log(month,date,year);
             <div className=" lg:space-y-6 ">
               <div className=" twitter-text font-semibold text-[16px]"> Date of birth</div>
               <div className=" twitter-text  text-gray-400 text-[14px]">This will not be shown publicly.Confirm your own age,even if this account is for bussiness,a pet,or something else. </div>
-              <div className=" pt-4">
+              <div className=" ">
               <BirthdayInput  DOB={DOBInput} onchangeHandler={onchangeHandler} />
               </div>
             </div>
