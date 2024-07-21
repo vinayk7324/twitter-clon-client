@@ -3,12 +3,14 @@
 @tailwind utilities;
 .material-symbols-outlined {
   font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
+  'FILL' 0,
+  'wght' 300,
   'GRAD' 0,
-  'opsz' 24
+  'opsz' 20
 }
-
+.box-shadow{
+  box-shadow: 0px 0px  15px rgb(80, 79, 79);
+}
 .bg-img{
   background-image: url("./assets/twitter.png");
   background-position: center;
@@ -43,15 +45,64 @@ input:focus{
 
 }
 .box-shadow-none:focus{
-  box-shadow: none !important;
+  outline: none;
+  box-shadow: none;
+  
+
   
 }
 .box-shadow-none{
   outline: none;
   box-shadow: none;
-  border-color: transparent;
+  border:none;
   
 }
 .link{
   color: rgb(90, 90, 219);
+}
+
+/* .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 50,
+  'opsz' 24,
+  
+ 
+} */
+::-webkit-scrollbar{
+  width: 0px;
+ 
+}
+::-webkit-scrollbar-thumb{
+  width: 0px;
+  background-color: rgb(0, 242, 255);
+  border-radius: 20px;
+  
+
+}
+::-webkit-scrollbar-track{
+
+}
+
+
+.PostIcons:nth-child(1):hover{
+  color: rgb(40, 195, 247);
+}
+.PostIcons:nth-child(2):hover{
+  color:rgb(14, 231, 14)
+}
+.PostIcons:nth-child(4):hover{
+  color: rgb(21, 8, 211);
+}
+.PostIcons:nth-child(3):hover{
+  color: rgb(240, 14, 14);
+}
+
+
+.specialIcons:nth-child(1):hover{
+  color: rgb(255, 0, 187);
+}
+.specialIcons:nth-child(2):hover{
+  color: rgb(21, 8, 211);
 }

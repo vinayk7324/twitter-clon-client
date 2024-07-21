@@ -2,56 +2,39 @@ import React, { useEffect, useState } from 'react'
 
 import axios from 'axios'
 import { api_url } from '../env-controller'
+import UserName from './CustomComponent/UserName'
+import AppLoader from './CustomComponent/AppLoader'
+import TwitterUI from './twitter-colon-web/TwitterUI'
+
+import TwitterDashboard from './twitter-colon-web/TwitterDashboard'
+import TwitterUIRight from './twitter-colon-web/TwitterUIRight'
 
 
 const App = () => {
-
-  const [User,setUser] = useState()
- useEffect(()=>{
-  const getUser =async ()=>{
-    try {
-      const res = await axios.get(`${api_url}/auth/login/success`,{withCredentials:true})
-      if(res.data.success){
-       const user = localStorage.getItem("user")
-       if(user){
-        localStorage.removeItem('user')
-       }
-        localStorage.setItem('user',JSON.stringify(res.data.user._json))
-      }
-      
-    } catch (error) {
-      console.log(error);
-      
-    }
+  const [appLoader,setAppLoader] = useState(true);
+  const [userNameVal,setUsernameVal] =  useState('kumarvinay')
+ const  onChangeUsername = (e)=>{
+  setUsernameVal(e.target.value)
 
   }
-  getUser();
 
- },[]);
- const logoutHandler =  ()=>{
-  window.open(`${api_url}/auth/logout`,"_self")
 
- }
- 
- useEffect(()=>{
-  const user = localStorage.getItem('user')
-  if(user){
-    setUser(JSON.parse(user));
-  }
-  
+  useEffect(()=>{
+    setTimeout(() => {
+      setAppLoader(false)
+      
+    }, 3000);
 
- },[])
-  
+  },[])
 
 
   return (
-  <div className="">
-    <span> {User?.name}</span>
-    <img src={User?.picture} alt="" />
-    <span>{User?.email} </span>
-    <button onClick={logoutHandler} >Logout</button>
+<div className="h-screen w-full text-white twitter-text">
 
+ 
    
+
+  
 
 
   </div>

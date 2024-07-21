@@ -6,18 +6,31 @@ import reload from '../assets/reload1.png'
 import {HiArrowLeft } from 'react-icons/hi';
 
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import axios from 'axios';
+import { api_url } from '../../env-controller';
+import { useContextApi } from '../context-api/contextAPI';
 
 
 const OtpInput = () => {
+  const [resendLoader,setResendLoader] = useState(false); 
   const [minute,setMinute] = useState(1);
   const [resend,setResend] = useState(true);
   const [redZone,setRedZone] = useState(false);
   const [second,setSecond] = useState(59);
   const [isOnline, setIsOnline] = useState(false);
   const [insideLoader,setInsideLoader] = useState(true);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [otpLoader,setOtpLoader] = useState(false);
+  const [disable,setDisable] = useState(true);
   const [otp, setOtp] = useState(new Array(4).fill(''));
   const inputRefs = useRef([]);
+  const [a,setA] = useState(0);
+  const {userData} =  useContextApi()
+  const toastOtptions = {
+    theme:'dark',
+    position:'top-center'
+  }
 
   const handleChange = (element, index) => {
     const value = element.value;
@@ -26,7 +39,7 @@ const OtpInput = () => {
     if (value !== "" && index < 4 - 1) {
       inputRefs.current[index + 1].focus();
     }
-    // onChange(otp.join(''));
+   
   };
   const handleKeyDown = (e, index) => {
     
@@ -41,8 +54,6 @@ useEffect(()=>{
     if(second>0 && minute>=0){
        if(second<=16 && minute==0){
         setRedZone(true);
-  
-  
       }
       setSecond(second-1);
     }
@@ -52,6 +63,7 @@ useEffect(()=>{
     }
    
     else{
+      setDisable(true);
        setResend(false);
       return;
     }
@@ -60,16 +72,9 @@ useEffect(()=>{
 
   return ()=>{clearInterval(interval)}; 
 },[second])
-  
- 
- 
-
-
   useEffect(() => {
     setIsOnline(navigator.onLine);
     if(navigator.onLine){      
-      
-        
         setInsideLoader(false);
     
     }
@@ -85,16 +90,75 @@ useEffect(()=>{
     setTimeout(() => {
      setIsOnline(navigator.onLine)
       setInsideLoader(false)
-     
-      
-      
     }, 3000);
-    
-   
+  }
+  useEffect(()=>{
+  if(otp[0] !=='' && otp[1]!==''&& otp[2]!=='' && otp[3]!==''){
+    setDisable(false);
+
+  }
+  },[otp])
+  
+ 
+
+
+  const verifyOtp =async (e)=>{
+    e.preventDefault();
+    try {
+      
+      setOtpLoader(true);
+      const res = await axios.post(`${api_url}/auth/verify-otp`,{otp});
+      console.log(res.data);
+      if(!(res.data.success)){
+        setOtpLoader(false)
+         toast.error(res.data.message,toastOtptions);
+         return;
+      }
+      setOtpLoader(false)
+      toast.success(res.data.message,toastOtptions);
+      setTimeout(() => {
+        navigate('/password-input')
+        
+      }, 3000);
+    } catch (error) {
+      console.log("Error in verfying otp :: ",error);
+    }
+
   }
 
+  const resendOtp = async ()=>{
+    try {
+      setResendLoader(true);
+      console.log(userData.email);
+      const res =  await axios.post(`${api_url}/auth/send-otp`,{email:userData.email});
+      if(!(res.data.success)){
+        setResendLoader(false)
+        toast.error(res.data.message,toastOtptions);
+        return;
+
+      }
+      setResendLoader(false)
+      toast.success(res.data.message,toastOtptions);
+      setMinute(1);
+      setSecond(59);
+      setRedZone(false);
+      setResend(true);
+      
+    } catch (error) {
+      console.log('resendOtp error :: ',error);
+      return;
+    }
+
+  }
+  
+const notRecieve = ()=>{
+  setMinute(0);
+  setSecond(0);
+  setResend(false);
+  setRedZone(true)
 
 
+}
 
 
   return (
@@ -124,7 +188,7 @@ useEffect(()=>{
           <div className=" w-full lg:space-y-4 space-y-2 flex items-center justify-center flex-col      lg:px-16 px-2  ">
           <div className=" space-x-2">
               <span className={` ${redZone?"text-red-500":"text-white"}  py-2 px-4 lg:text-[14px] text-[16px] twitter-text`}> {minute}:{second} </span>
-              <button disabled={resend} className={`twitter-text px-3  lg:text-[14px] text-[16px] ${resend?" text-gray-500 hover:cursor-not-allowed":" text-white lg:hover:text-[#5dd4e6] "}`}>resend</button>
+              <button onClick={resendOtp} disabled={resend} className={`twitter-text px-3  lg:text-[14px] text-[16px] ${resend?" text-gray-500 hover:cursor-not-allowed":" text-white lg:hover:text-[#5dd4e6] "}`}> {resendLoader?<Spinner size={"sm"} />:"resend"} </button>
              </div>
             
                <div className="flex  space-x-3 ">
@@ -143,22 +207,15 @@ useEffect(()=>{
                  />
                ))}
              </div>
-             
-
-            
-
-
-
-          
-
-            <div className="">
-
-            </div>
+            <button onClick={notRecieve} className=" text-[14px] link ">
+              didn't recieve email?
+     
+            </button>
           </div>
 
           <div className="lg:h-full px-3 flex items-end lg:border-gray-500 lg:py-1 lg:px-16 pb-4 lg:pb-6  ">
         <div className=" w-full  ">
-          <button  onClick={()=>navigate('/password-input')} className='  w-full transition-all duration-300  py-2  bg-[#20abad]   rounded-full twitter-text  text-[14px]  font-bold hover:bg-[#3cbdd1] '>Next </button>
+          <button disabled={disable} onClick={(e)=>verifyOtp(e)} className={` ${disable?" cursor-not-allowed bg-[#514f4f] ":" hover:bg-[#3cbdd1] bg-[#20abad]  "}   w-full transition-all duration-300  py-2     rounded-full twitter-text  text-[14px]  font-bold  `}>{!otpLoader?"Next":<Spinner/>} </button>
         </div>
       </div> 
 
@@ -194,7 +251,7 @@ useEffect(()=>{
      
 
 
-
+<ToastContainer/>
     </div>
 
 

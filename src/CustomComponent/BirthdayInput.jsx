@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const BirthdayInput = ({
-    DOB = {month,date,year},
+    DOB = {month:"",date:"",year:""},
     onchangeHandler = ()=>{}
     
     
@@ -12,7 +12,7 @@ const BirthdayInput = ({
    
     const monthArr = [
         {
-            name: "",
+            name:" ",
 
         },
         {
@@ -96,7 +96,7 @@ const BirthdayInput = ({
                                     {
                                         monthArr.map((element, index) => (
 
-                                            <option key={index} className=' bg-black border-b text-white hover:bg-blue-300 rounded-none twitter-text' value={index} disabled={index==0} >{element.name} </option>
+                                            <option key={index} className=' bg-black border-b text-white hover:bg-blue-300 rounded-none twitter-text' value={index}  >{element.name} </option>
                                         )
                                         )
                                     }
