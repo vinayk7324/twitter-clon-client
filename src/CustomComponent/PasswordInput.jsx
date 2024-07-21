@@ -121,7 +121,7 @@ const PasswordInput = () => {
 
       setuserData({...userData,userName:userName,password:password})
       setTimeout(() => {
-        navigate('/twitter-home-page');
+        navigate('/twitter-home');
         setOutlet(false);
       }, 3000);
       
