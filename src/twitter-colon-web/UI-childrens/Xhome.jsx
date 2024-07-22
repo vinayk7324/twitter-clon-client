@@ -11,7 +11,8 @@ const Xhome = () => {
   const [slug, setSlug] = useState("/for-you");
   const [isActive, setIsActive] = useState(false);
   const [replySettingToggle, setReplyToggole] = useState(false);
-  const {setToggle} = useContextApi();
+  const {setToggle,userDetails,setUserDetails} = useContextApi();
+  console.log(userDetails?.avatarImage);
   const [PostText,setPostText]= useState(undefined);
   const XhomeArr = [
     {
@@ -78,7 +79,7 @@ const Xhome = () => {
           <div className=" border-b border-[#2a2929] p-3">
             <div className="flex space-x-2 ">
               <div className=' bg-gray-500 rounded-full lg:w-12 lg:h-12 w-10 h-10 overflow-hidden  '>
-                <img src={img} className=' ' alt="" />
+                <img src={userDetails?.isAvatarSet && userDetails?.avatarImage} className=' ' alt="" />
               </div>
               <span>
                 <input value={PostText} onClick={()=>setPostText("")} onChange={(e)=>(setPostText(e.target.value))} type="text" className=' lg:text-[23px] twitter-text bg-inherit border-none' placeholder='What is Happening?!' /> </span>

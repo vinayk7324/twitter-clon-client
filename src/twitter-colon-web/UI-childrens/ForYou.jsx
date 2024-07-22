@@ -8,16 +8,18 @@ import {RiBarChartGroupedLine} from 'react-icons/ri'
 import {MdOutlineFileUpload} from  "react-icons/md"
 import {PiShareFatLight} from "react-icons/pi"
 import mPic from '../../assets/mahi.jpeg'
+import { useContextApi } from '../../context-api/contextAPI'
 
 const ForYou = () => {
   const [isHoverComment,setIshoverComment] = useState(true);
+  const {userDetails,setUserDetails} = useContextApi();
  
   const PostArray = [
     {
-      name: "Vinay",
-      avatarImage: img,
+      name: userDetails?.name,
+      avatarImage: userDetails?.avatarImage,
       isVerified: true,
-      userName: "@vinay1234",
+      userName:userDetails?.userName,
       heading: "This is my first post!",
       img: img,
       postTime:"3h ago",
@@ -118,19 +120,19 @@ const ForYou = () => {
                      <img src={element.avatarImage} alt="" /> </div>
 
                   <div className="space-y-2 ">
-                    <div className=" flex items-center text-sm  space-x-1">
-                      <span className=' font-bold'> {element.name} </span>
+                    <div className=" flex items-center  text-sm  space-x-1">
+                      <div className=' font-bold  w-20  text-nowrap overflow-ellipsis overflow-hidden'> {element.name} </div>
                       {
                         element.isVerified && 
                        <span>
                        <VerifiedIcon/>
                        </span>
                       }
-                      <span className=' text-[#696868]'>{element.userName} </span>
-                      <span className=' text-[#696868] '>.</span>
-                      <span className='text-[#696868]'> {element.postTime} </span>
+                      <span className=' text-[#696868] text-[14px]'>{element.userName} </span>
                       
-                    </div>
+                      
+                      <span className='text-[#696868] text-[14px]'> {element.postTime} </span>
+                    </div> 
                     <div className=" text-sm">
                       {element.heading}..
 

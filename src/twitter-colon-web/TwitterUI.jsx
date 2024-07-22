@@ -1,19 +1,55 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import TwitterDashboard from './TwitterDashboard'
 import TwitterUIRight from './TwitterUIRight'
 import { Outlet, useNavigate } from 'react-router-dom'
 import ToggleOrigin from '../toggle-component/ToggleOrigin'
 import { useContextApi } from '../context-api/contextAPI'
+import AppLoader from '../CustomComponent/AppLoader'
+import axios from 'axios'
+import { api_url } from '../../env-controller'
 
 const TwitterUI = () => {
     const navigate = useNavigate();
-    const { toggle, setToggle } = useContextApi();
+    const { toggle, setToggle,userDetails,setUserDetails } = useContextApi();
+    const [appLoader,setApploader] = useState(true);
+    useEffect(()=>{
+        const googleAuth =async ()=>{
+            try {
+                const res = await axios.get(`${api_url}/auth/login/success`,{withCredentials:true});
+                console.log(res.data);
+               
+                const userData = res.data?.user
+                console.log(userData);
+                setUserDetails(userData);
+                console.log(userDetails);
+                
+                
+                if(res.data.success){
+
+                    const userRes = await axios.post(`${api_url}/auth/twitter-user/google-account-user`,{id:userData._id},{withCredentials:true});
+                    console.log(userRes.data);
+
+                  
+                   return;
+                }
+                setApploader(false);
+            } catch (error) {
+                console.log(error);
+                
+            }
+
+        }
+        googleAuth();
+    },[])
+  
+    console.log(userDetails);
 
 
 
     return (
         <>
             <div className=" flex flex-col-reverse md:flex-row     bg-black h-screen text-white    h-full ">
+
                 <div className=" xl:w-[28%]   border  border-[#2a2929]  md:h-full">
                     <TwitterDashboard />
                 </div>
@@ -25,6 +61,9 @@ const TwitterUI = () => {
                         <TwitterUIRight />
                     </div>
                 </div>
+               {
+                appLoader &&  <AppLoader/>
+               }
 
             </div>
             {
@@ -33,6 +72,8 @@ const TwitterUI = () => {
                     <ToggleOrigin slug={toggle} />
                 </div>
             }
+
+           
 
         </>
     )

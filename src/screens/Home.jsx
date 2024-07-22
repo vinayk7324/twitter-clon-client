@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { api_url } from '../../env-controller'
-import SignUp from '../CustomComponent/SignUp'
-import axios from 'axios'
+
 import { useContextApi } from '../context-api/contextAPI'
-import BirthdayInput from '../CustomComponent/BirthdayInput'
 import { Link, Outlet } from 'react-router-dom'
 
 
@@ -16,9 +14,15 @@ const Home = () => {
     const [loader, setLoader] = useState(false);
     const googleAuth = () => {
 
-        window.open(`${api_url}/auth/google/callback`,
-            "_self"
-        )
+        try {
+            window.open(`${api_url}/auth/google/callback`,
+                "_self"
+            )
+            
+        } catch (error) {
+            console.log(error);
+            
+        }
 
     }
 

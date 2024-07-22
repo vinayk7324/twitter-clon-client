@@ -5,6 +5,7 @@ const context = createContext();
 const ContextProvider = ({ children }) => {
     const [signUpPage,setSignUp]  = useState(false);
     const [outlet,setOutlet] = useState(false);
+    
     const [userData,setuserData] = useState({
         name:'',
         email:'',
@@ -13,13 +14,14 @@ const ContextProvider = ({ children }) => {
         DOB:'',
 
     });
+    const [userDetails,setUserDetails] = useState(null);
    const [toggle,setToggle] = useState("");
    
 
 
     return (
 
-        <context.Provider value={{signUpPage,setSignUp ,setOutlet,outlet,userData,setuserData,toggle,setToggle}}>
+        <context.Provider value={{userDetails,setUserDetails, signUpPage,setSignUp ,setOutlet,outlet,userData,setuserData,toggle,setToggle}}>
 
             {children}
 
