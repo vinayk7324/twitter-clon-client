@@ -40,16 +40,16 @@ const router = createBrowserRouter([
   
   
   {
-    path:"/login-failed",
+    path:"login-failed",
     element:<LoginFailed/>
 
   },
   {
-    path:'/practice',
+    path:'practice',
     element:<Practice/>
   },
   {
-    path:"/twitter-home",
+    path:"twitter-home",
     element:<TwitterUI/>,
     children:[
       {
