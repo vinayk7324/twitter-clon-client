@@ -16,12 +16,13 @@ const ContextProvider = ({ children }) => {
     });
     const [userDetails,setUserDetails] = useState(null);
    const [toggle,setToggle] = useState("");
+   const [isGoogleLogin,setGoogleLogin] = useState(true);
    
 
 
     return (
 
-        <context.Provider value={{userDetails,setUserDetails, signUpPage,setSignUp ,setOutlet,outlet,userData,setuserData,toggle,setToggle}}>
+        <context.Provider value={{userDetails,isGoogleLogin,setGoogleLogin,setUserDetails, signUpPage,setSignUp ,setOutlet,outlet,userData,setuserData,toggle,setToggle}}>
 
             {children}
 

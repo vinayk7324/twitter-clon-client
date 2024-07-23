@@ -24,7 +24,7 @@ const PasswordInput = () => {
   const [special,setSpecial] = useState(false);
   const [disable,setDisable] = useState(true);
   const  [loader,setLoader] = useState(false);
-  const {userData,setuserData,setOutlet} = useContextApi();
+  const {userData,setuserData,setOutlet,setGoogleLogin} = useContextApi();
   const toastOptions = {
     theme:'dark',
     position:"top-center"
@@ -119,8 +119,10 @@ const PasswordInput = () => {
       }
       sessionStorage.setItem('user-data',JSON.stringify(res.data.userDetails));
 
-      setuserData({...userData,userName:userName,password:password})
+      setuserData({...userData,userName:userName,password:password});
+
       setTimeout(() => {
+        setGoogleLogin(false);
         navigate('/twitter-home');
         setOutlet(false);
       }, 3000);

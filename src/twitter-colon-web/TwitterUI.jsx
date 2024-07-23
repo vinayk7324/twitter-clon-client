@@ -10,9 +10,9 @@ import { api_url } from '../../env-controller'
 
 const TwitterUI = () => {
     const navigate = useNavigate();
-    const { toggle, setToggle,userDetails,setUserDetails } = useContextApi();
+    const { toggle, setToggle,userDetails,setUserDetails,isGoogleLogin} = useContextApi();
     const [appLoader,setApploader] = useState(true);
-    useEffect(()=>{
+   isGoogleLogin && useEffect(()=>{
         const googleAuth =async ()=>{
             try {
                 const res = await axios.get(`${api_url}/auth/login/success`,{withCredentials:true});
@@ -42,7 +42,7 @@ const TwitterUI = () => {
         googleAuth();
     },[])
   
-    console.log(userDetails);
+  
 
 
 
