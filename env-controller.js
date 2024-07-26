@@ -1,5 +1,5 @@
-import dotenv from 'dotenv'
-dotenv.config();
+
+
 
 const api_url = import.meta.env.VITE_APP_API_URL
 const ws_url = import.meta.env.VITE_APP_WS_URL
