@@ -49,19 +49,19 @@ const router = createBrowserRouter([
     element:<Practice/>
   },
   {
-    path:"twitter-home",
+    path:"twitter-home-page",
     element:<TwitterUI/>,
     children:[
       {
-      path:'/twitter-home',
+      path:'/twitter-home-page',
       element:<Xhome/>
     },
     {
-      path:"/twitter-home/explore",
+      path:"/twitter-home-page/explore",
       element:<TwitterUIRight/>
     },
     {
-      path:"/twitter-home/notifications",
+      path:"/twitter-home-page/notifications",
       element:<Notifications/>
     },
 
