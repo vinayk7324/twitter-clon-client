@@ -11,23 +11,23 @@ import { api_url } from '../../env-controller'
 const TwitterUI = () => {
     const navigate = useNavigate();
     const { toggle, setToggle,userDetails,setUserDetails,isGoogleLogin} = useContextApi();
-    const [appLoader,setApploader] = useState(true);
+    const [appLoader,setApploader] = useState(false);
    isGoogleLogin && useEffect(()=>{
         const googleAuth =async ()=>{
             try {
                 const res = await axios.get(`${api_url}/auth/login/success`,{withCredentials:true});
-                console.log(res.data);
+               
                
                 const userData = res.data?.user
-                console.log(userData);
+               
                 setUserDetails(userData);
-                console.log(userDetails);
+                
                 
                 
                 if(res.data.success){
 
                     const userRes = await axios.post(`${api_url}/auth/twitter-user/google-account-user`,{id:userData._id},{withCredentials:true});
-                    console.log(userRes.data);
+                    
 
                   
                    return;

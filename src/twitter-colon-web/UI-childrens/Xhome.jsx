@@ -12,7 +12,7 @@ const Xhome = () => {
   const [isActive, setIsActive] = useState(false);
   const [replySettingToggle, setReplyToggole] = useState(false);
   const {setToggle,userDetails,setUserDetails} = useContextApi();
-  console.log(userDetails?.avatarImage);
+
   const [PostText,setPostText]= useState(undefined);
   const XhomeArr = [
     {

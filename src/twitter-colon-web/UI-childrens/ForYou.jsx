@@ -13,6 +13,7 @@ import { useContextApi } from '../../context-api/contextAPI'
 const ForYou = () => {
   const [isHoverComment,setIshoverComment] = useState(true);
   const {userDetails,setUserDetails} = useContextApi();
+  
  
   const PostArray = [
     {
@@ -116,7 +117,7 @@ const ForYou = () => {
                 <div className="top-left flex items-center space-x-2">
 
 
-                  <div className="avatar lg:h-14 lg:w-14 w-10 h-10  rounded-full overflow-hidden">
+                  <div className="avatar lg:h-14 lg:w-14 w-10 h-10 bg-gray-500  rounded-full overflow-hidden">
                      <img src={element.avatarImage} alt="" /> </div>
 
                   <div className="space-y-2 ">
