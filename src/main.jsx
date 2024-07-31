@@ -33,17 +33,17 @@ const router = createBrowserRouter([
     path:"/password-input",
     element:<PasswordInput/>
   },
-               {
-    path:"/login-failed",
+  {
+    path:"login-failed",
     element:<LoginFailed/>
 
   },
   {
-    path:'/practice',
+    path:'practice',
     element:<Practice/>
   },
   {
-    path:"/twitter-home-page",
+    path:"twitter-home-page",
     element:<TwitterUI/>,
     children:[
       {
@@ -59,6 +59,8 @@ const router = createBrowserRouter([
       element:<Notifications/>
     },
 
+  ]
+  }
 
 ]
 
@@ -66,8 +68,6 @@ const router = createBrowserRouter([
   
   
  
-  ]
-  }
 
  
 ])
