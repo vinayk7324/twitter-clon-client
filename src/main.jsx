@@ -32,13 +32,7 @@ const router = createBrowserRouter([
   {
     path:"/password-input",
     element:<PasswordInput/>
-  }
-
-]
-
   },
-  
-  
   {
     path:"login-failed",
     element:<LoginFailed/>
@@ -67,6 +61,13 @@ const router = createBrowserRouter([
 
   ]
   }
+
+]
+
+  },
+  
+  
+ 
 
  
 ])
