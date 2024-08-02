@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import TwitterDashboard from './TwitterDashboard'
 import TwitterUIRight from './TwitterUIRight'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { json, Outlet, useNavigate } from 'react-router-dom'
 import ToggleOrigin from '../toggle-component/ToggleOrigin'
 import { useContextApi } from '../context-api/contextAPI'
 import AppLoader from '../CustomComponent/AppLoader'
@@ -18,22 +18,13 @@ const TwitterUI = () => {
             try {
                 const res = await axios.get(`${api_url}/auth/login/success`,{withCredentials:true});
                
-               
-                const userData = res.data?.user
-                console.log(res.data);
-                
-               
                 setUserDetails(res.data.user);
-                
-               
-    
-                if(!res.data.user){
-                    navigate("/auth")
-            
+                const user =  localStorage.getItem("user");
+                if(user){
+                    localStorage.removeItem("user");
                 }
-                
-                
-                
+                localStorage.setItem("user",JSON.stringify(res.data.user));
+              
                 if(res.data.success){
 
                     const userRes = await axios.post(`${api_url}/auth/twitter-user/google-account-user`,{id:userData._id},{withCredentials:true});
@@ -48,12 +39,18 @@ const TwitterUI = () => {
 
         }
         googleAuth();
+        
+    },[])
+   
+    useEffect(()=>{
+        const user = localStorage.getItem("user");
+        if(!user){
+            navigate("/auth")
+        }
+
     },[])
   
-  useEffect(()=>{
-    
-
-  },[]);
+ 
 
 
 

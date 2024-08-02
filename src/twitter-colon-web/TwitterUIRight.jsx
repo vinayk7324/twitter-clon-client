@@ -1,9 +1,16 @@
-import React from 'react'
+import React ,{useEffect}from 'react'
 import { HiDotsHorizontal, HiSearch } from 'react-icons/hi'
 import img from "../assets/mahi.jpeg"
 import vini from '../assets/profile.jpg'
+import { useContextApi } from '../context-api/contextAPI'
+import { useNavigate } from 'react-router-dom'
 
 const TwitterUIRight = () => {
+  const {userDetails} = useContextApi();
+  console.log(userDetails);
+
+  
+  const navigate = useNavigate();
   const trendingArr = [
     {
        trendingName:" #NEETUGUPDATE",
@@ -41,6 +48,8 @@ const users = [
  
 
 ]
+
+
   return (
     <div className=' h-full  scroll-smooth overflow-y-scroll   '>
       <div className="  h-full   w-[80%] ">
