@@ -12,6 +12,7 @@ const TwitterUI = () => {
     const navigate = useNavigate();
     const { toggle, setToggle,userDetails,setUserDetails,isGoogleLogin} = useContextApi();
     const [appLoader,setApploader] = useState(false);
+    
    isGoogleLogin && useEffect(()=>{
         const googleAuth =async ()=>{
             try {
@@ -19,16 +20,23 @@ const TwitterUI = () => {
                
                
                 const userData = res.data?.user
+                console.log(res.data);
+                
                
-                setUserDetails(userData);
+                setUserDetails(res.data.user);
+                
+               
+    
+                if(!res.data.user){
+                    navigate("/auth")
+            
+                }
                 
                 
                 
                 if(res.data.success){
 
                     const userRes = await axios.post(`${api_url}/auth/twitter-user/google-account-user`,{id:userData._id},{withCredentials:true});
-                    
-
                   
                    return;
                 }
@@ -42,7 +50,10 @@ const TwitterUI = () => {
         googleAuth();
     },[])
   
-  
+  useEffect(()=>{
+    
+
+  },[]);
 
 
 

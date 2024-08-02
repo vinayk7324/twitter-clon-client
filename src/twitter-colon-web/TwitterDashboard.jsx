@@ -8,17 +8,17 @@ const TwitterDashboard = () => {
     const { setToggle } = useContextApi()
     const dashBoardArr = [
         {
-            slug: "/twitter-home",
+            slug: "/",
             icon: "home",
             title: "Home"
         },
         {
-            slug: "/twitter-home/explore",
+            slug: "/explore",
             icon: "search",
             title: "Explore"
         },
         {
-            slug: "/twitter-home/notifications",
+            slug: "/notifications",
             icon: "Notifications",
             title: "Notifications"
         },
@@ -66,7 +66,7 @@ const TwitterDashboard = () => {
                     <div className=" w-full space-y-2   flex md:flex-col   items-center justify-between   w-full">
                         {
                             dashBoardArr.map((element, index) => (
-                                !element.special ? <NavLink className={({ isActive }) => ` ${isActive && element.slug !== "/twitter-home" ? " bg-[#1d1c1c] " : " hover:bg-[#1d1c1c] "}   xl:ps-3 xl:rounded-full  transition-all duration-300  xl:text-[25px]  xl:w-full    items-center `} key={index} to={element.slug}>  
+                                !element.special ? <NavLink className={({ isActive }) => ` ${isActive && element.slug !== "" ? " bg-[#1d1c1c] " : " hover:bg-[#1d1c1c] "}   xl:ps-3 xl:rounded-full  transition-all duration-300  xl:text-[25px]  xl:w-full    items-center `} key={index} to={element.slug}>  
                                     <div className="  flex xl:space-x-2 xl:py-1  justify-center xl:justify-start items-center ">
                                         
                                             <div className=' text-center  flex flex-row justify-center items-center '>

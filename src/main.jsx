@@ -20,18 +20,43 @@ import TwitterUIRight from './twitter-colon-web/TwitterUIRight.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
+    element:<TwitterUI/>,
+    children:[
+      {
+      path:'/',
+      element:<Xhome/>
+    },
+    {
+      path:"/explore",
+      element:<TwitterUIRight/>
+    },
+    {
+      path:"/notifications",
+      element:<Notifications/>
+    },
+
+  ]
+  }
+  ,
+  {
+    path:"/auth",
     element:<Home/>,
     children:[{
-      path:"/signup",
+      path:"/auth/signup",
       element:<SignUp/>
     },
   {
-    path:"/OtpInput",
+    path:"/auth/OtpInput",
     element:<OtpInput/>
   },
   {
-    path:"/password-input",
+    path:"auth/password-input",
     element:<PasswordInput/>
+  },
+ 
+
+]
+
   },
   {
     path:"login-failed",
@@ -41,29 +66,6 @@ const router = createBrowserRouter([
   {
     path:'practice',
     element:<Practice/>
-  },
-  {
-    path:"twitter-home-page",
-    element:<TwitterUI/>,
-    children:[
-      {
-      path:'/twitter-home-page',
-      element:<Xhome/>
-    },
-    {
-      path:"/twitter-home-page/explore",
-      element:<TwitterUIRight/>
-    },
-    {
-      path:"/twitter-home-page/notifications",
-      element:<Notifications/>
-    },
-
-  ]
-  }
-
-]
-
   },
   
   

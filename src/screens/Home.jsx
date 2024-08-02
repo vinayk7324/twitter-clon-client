@@ -153,7 +153,7 @@ const Home = () => {
 
                         </div>
                         <div className="lg:w-[40%] space-y-2 lg:space-y-1 ">
-                         <Link to={"/signup"} onClick={()=>setOutlet(true)}> <button   className=' flex items-center font-bold   w-full justify-center  px-4 py-2 rounded-full bg-[#0055ff] text-white'>
+                         <Link to={"/auth/signup"} onClick={()=>setOutlet(true)}> <button   className=' flex items-center font-bold   w-full justify-center  px-4 py-2 rounded-full bg-[#0055ff] text-white'>
                                 Create account
 
                             </button>

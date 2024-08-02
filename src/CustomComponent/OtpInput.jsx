@@ -117,7 +117,7 @@ useEffect(()=>{
       setOtpLoader(false)
       toast.success(res.data.message,toastOtptions);
       setTimeout(() => {
-        navigate('/password-input')
+        navigate('/auth/password-input')
         
       }, 3000);
     } catch (error) {

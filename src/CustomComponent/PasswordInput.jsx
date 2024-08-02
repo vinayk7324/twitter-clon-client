@@ -123,7 +123,7 @@ const PasswordInput = () => {
 
       setTimeout(() => {
         setGoogleLogin(false);
-        navigate('/twitter-home-page');
+        navigate('/');
         setOutlet(false);
       }, 3000);
       
