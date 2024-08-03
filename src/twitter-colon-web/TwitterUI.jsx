@@ -21,7 +21,11 @@ const TwitterUI = () => {
                
                 setUserDetails(res.data.user);
                 console.log(res.data.user);
-                setIsLogin(true);
+                if(!(res.data.user)){
+                    navigate("/auth")
+
+                    
+                }
                 
                 sessionStorage.setItem("user",JSON.stringify(res.data.user));
               
@@ -42,12 +46,7 @@ const TwitterUI = () => {
         
     },[])
    
-    useEffect(()=>{
-        if(!isLogin){
-            navigate("/")
-        }
-
-    },[])
+   
   
  
 
