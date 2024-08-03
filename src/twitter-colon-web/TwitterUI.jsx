@@ -21,7 +21,7 @@ const TwitterUI = () => {
                
                 setUserDetails(res.data.user);
                 console.log(res.data.user);
-                if(!(res.data.user)){
+                if(!(res.data.success)){
                     navigate("/auth")
 
                     
