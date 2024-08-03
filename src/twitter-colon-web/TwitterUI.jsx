@@ -44,7 +44,7 @@ const TwitterUI = () => {
    
     useEffect(()=>{
         if(!isLogin){
-            navigate("/")
+            navigate("/auth")
         }
 
     },[])
