@@ -12,6 +12,7 @@ const TwitterUI = () => {
     const navigate = useNavigate();
     const { toggle, setToggle,userDetails,setUserDetails,isGoogleLogin} = useContextApi();
     const [appLoader,setApploader] = useState(false);
+    const [isLogin,setIsLogin] = useState(false);
     
    isGoogleLogin && useEffect(()=>{
         const googleAuth =async ()=>{
@@ -19,17 +20,16 @@ const TwitterUI = () => {
                 const res = await axios.get(`${api_url}/auth/login/success`,{withCredentials:true});
                
                 setUserDetails(res.data.user);
-                const user =  localStorage.getItem("user");
-                if(user){
-                    localStorage.removeItem("user");
-                }
-                localStorage.setItem("user",JSON.stringify(res.data.user));
+                console.log(res.data.user);
+                setIsLogin(true);
+                
+                sessionStorage.setItem("user",JSON.stringify(res.data.user));
               
                 if(res.data.success){
 
                     const userRes = await axios.post(`${api_url}/auth/twitter-user/google-account-user`,{id:userData._id},{withCredentials:true});
                   
-                   return;
+                
                 }
                 setApploader(false);
             } catch (error) {
@@ -43,9 +43,8 @@ const TwitterUI = () => {
     },[])
    
     useEffect(()=>{
-        const user = localStorage.getItem("user");
-        if(!user){
-            navigate("/auth")
+        if(!isLogin){
+            navigate("/")
         }
 
     },[])
